@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>DockerizedTesting.S3</PackageId>
+    <Authors>Joe Shearn</Authors>
+    <Product>DockerizedTesting.S3</Product>
+    <Description>A fixture for XUnit that start up a fake local S3 bucket to test your code with. Whilst it was built for XUnit it should be framework agnostic.</Description>
+    <Copyright />
+    <PackageProjectUrl>https://github.com/devjoes/DockerizedTesting</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/devjoes/DockerizedTesting</RepositoryUrl>
+    <PackageTags>docker s3 amazon unittesting testing</PackageTags>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>Fixed issue where it would wait forever for s3 to come up
+Made mounting a volume optional (you can sometimes get this issue otherwise https://github.com/jubos/fake-s3/issues/66 )</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="license.txt" />
+    <None Include="license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.3.105.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DockerizedTesting\DockerizedTesting.csproj" />
+  </ItemGroup>
+
+</Project>

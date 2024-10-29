@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Joe Shearn</Authors>
+    <Description>A fixture for XUnit that start up a rabbit queue to test your code with. Whilst it was built for XUnit it should be framework agnostic.</Description>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/devjoes/DockerizedTesting</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/devjoes/DockerizedTesting</RepositoryUrl>
+    <PackageTags>docker rabbitmq rabbit unittesting testing</PackageTags>
+    <Version>1.2.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DockerizedTesting\DockerizedTesting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\DockerizedTesting.Mongo\license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
